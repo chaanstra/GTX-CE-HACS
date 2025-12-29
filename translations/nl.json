@@ -1,0 +1,27 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "GreenThinx CE sensor toevoegen",
+                "description": "Selecteer de grondsoort voor deze sensor.",
+                "data": {
+                    "sensor_id": "Sensor-ID",
+                    "soil_type": "Grondsoort"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Sensor configureren",
+                "description": "Pas de grondsoort en root zone aan. Alleen metingen binnen de root zone bepalen de totale bodemstatus.",
+                "data": {
+                    "soil_type": "Grondsoort",
+                    "root_zone_start_cm": "Root zone start (cm)",
+                    "root_zone_end_cm": "Root zone einde (cm)"
+                }
+            }
+        }
+    }
+}

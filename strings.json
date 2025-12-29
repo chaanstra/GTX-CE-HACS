@@ -1,0 +1,27 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Add GreenThinx CE sensor",
+                "description": "Select the soil type for this sensor.",
+                "data": {
+                    "sensor_id": "Sensor ID",
+                    "soil_type": "Soil type"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Configure sensor",
+                "description": "Update the soil type and root zone. Only measurements within the root zone are used for the overall soil status.",
+                "data": {
+                    "soil_type": "Soil type",
+                    "root_zone_start_cm": "Root zone start (cm)",
+                    "root_zone_end_cm": "Root zone end (cm)"
+                }
+            }
+        }
+    }
+}

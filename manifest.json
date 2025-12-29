@@ -1,0 +1,11 @@
+{
+  "domain": "greenthinx_ce",
+  "name": "GreenThinx Community Edition",
+  "version": "0.1.0",
+  "documentation": "https://greenthinx.io",
+  "requirements": [],
+  "dependencies": [],
+  "codeowners": ["@greenthinx"],
+  "iot_class": "cloud_polling",
+  "config_flow": true
+}
