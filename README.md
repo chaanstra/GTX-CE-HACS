@@ -70,3 +70,100 @@ The **Root Zone Soil Status** sensor looks at all probe readings between the *St
 *   Sand
 *   Potting Soil
 *   ... and more.
+
+## Example Dashboard
+
+A complete example dashboard configuration is available in [`lovelace_example.yaml`](lovelace_example.yaml).
+
+<details>
+<summary>Click to view Dashboard YAML</summary>
+
+```yaml
+title: GreenThinx Soil Monitoring
+views:
+  - title: Soil Overview
+    path: soil
+    icon: mdi:sprout
+    theme: default
+    badges: []
+    cards:
+      - type: markdown
+        content: >
+          ## 🌱 Soil overview 
+
+          Real-time soil conditions based on root zone analysis. 
+
+
+          🧱 **Soil type:**    {{
+          state_attr('sensor.greenthinx_root_zone_soil_status', 'soil_type') |
+          capitalize }}
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: sensor.greenthinx_root_zone_soil_status
+            name: Root zone soil status
+          - entity: sensor.greenthinx_root_zone_soil_status
+            name: Root zone (depths used)
+            attribute: depths_used_cm
+      - type: markdown
+        content: |
+          ## 🧱 Soil profile  
+          **Root zone: 10–30 cm**  
+          Measurements are shown from top to bottom.
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - type: entity
+                entity: sensor.greenthinx_depth_1_soil_status
+                name: 10 cm – Status
+              - type: entity
+                entity: sensor.greenthinx_depth_1_moisture
+                name: Moisture (%)
+          - type: horizontal-stack
+            cards:
+              - type: entity
+                entity: sensor.greenthinx_depth_2_soil_status
+                name: 20 cm – Status
+              - type: entity
+                entity: sensor.greenthinx_depth_2_moisture
+                name: Moisture (%)
+          - type: horizontal-stack
+            cards:
+              - type: entity
+                entity: sensor.greenthinx_depth_3_soil_status
+                name: 30 cm – Status
+              - type: entity
+                entity: sensor.greenthinx_depth_3_moisture
+                name: Moisture (%)
+      - type: markdown
+        content: |
+          ## ℹ️ Details
+          Additional context used for soil analysis.
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: sensor.greenthinx_depth_1_temperature
+            name: 10 cm – Temperature
+          - entity: sensor.greenthinx_depth_2_temperature
+            name: 20 cm – Temperature
+          - entity: sensor.greenthinx_depth_3_temperature
+            name: 30 cm – Temperature
+      - type: markdown
+        content: >
+          ---
+
+          **How this works**  
+
+          • Each sensor measures soil moisture and temperature at a fixed
+          depth  
+
+          • The *root zone* defines which depths matter most for plant health  
+
+          • The overall soil status is based on the *worst condition within the
+          root zone*  
+
+
+          Powered by **GreenThinx**
+```
+</details>
