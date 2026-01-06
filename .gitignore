@@ -1,0 +1,5 @@
+*
+!custom_components/greenthinx_ce/
+!hacs.json
+!README.md
+!.gitignore
