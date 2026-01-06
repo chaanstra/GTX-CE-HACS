@@ -5,7 +5,10 @@
   "documentation": "https://greenthinx.io",
   "requirements": [],
   "dependencies": [],
-  "codeowners": ["@greenthinx"],
+  "codeowners": [
+    "@greenthinx"
+  ],
   "iot_class": "cloud_polling",
-  "config_flow": true
+  "config_flow": true,
+  "issue_tracker": "https://github.com/chaanstra/greenthinx_ce/issues"
 }
